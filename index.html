@@ -1,31 +1,389 @@
-<!doctype html><html lang="zh-Hans"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>格言闯关 · Kata-kata Hikmat</title><style>
-:root{font-family:system-ui,'Noto Sans',sans-serif;color:#173d35;background:#f7f6ef}*{box-sizing:border-box}body{margin:0}header{display:flex;justify-content:space-between;align-items:center;padding:22px max(22px,calc((100% - 1000px)/2));border-bottom:1px solid #dce4d9;background:#fffdf6}.brand{font-weight:850;font-size:18px}.brand span{color:#c87529}button{font:inherit;cursor:pointer;border:0;border-radius:14px;transition:.15s}button:focus-visible{outline:3px solid #cb802c;outline-offset:4px}button:hover{transform:translateY(-2px)}nav{display:flex;gap:8px}nav button{padding:10px 15px;background:transparent;color:#456258}nav button.active{background:#e5eddf;color:#173d35;font-weight:750}main{max-width:1000px;margin:auto;padding:45px 24px}.eyebrow{text-transform:uppercase;letter-spacing:2px;color:#688275;font-size:12px;font-weight:800}h1{font-size:clamp(32px,5vw,52px);line-height:1.18;margin:14px 0}p{line-height:1.8}.sub{color:#688075}.hero{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:38px}.art{background:#e6eedb;border-radius:100px 100px 28px 28px;padding:40px 25px;text-align:center;transform:rotate(3deg)}.art .big{font-size:75px}.art p{font-family:Georgia,serif;font-size:24px;font-weight:bold}.tag{display:inline-block;padding:7px 12px;border-radius:100px;background:#fff4d5;color:#85621d;font-size:13px}.primary{background:#214f40;color:white;padding:16px 26px;font-weight:750}.secondary{background:#e7eddf;color:#214f40;padding:14px 22px}.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0}.mode{background:#fffdf8;border:2px solid #e1e5d9;padding:22px;text-align:left;color:inherit}.mode.selected{border-color:#315d48;background:#eff4e8}.mode strong{display:block;font-size:20px;margin-bottom:8px}.mode small{color:#6a7c6b;line-height:1.8}.foot{color:#8b978b;font-size:12px;margin-top:26px}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center}.progress{height:7px;background:#e2e8db;border-radius:9px;margin:22px 0 30px;overflow:hidden}.progress i{display:block;height:100%;background:#d4a04b;transition:width .3s}.question{background:#fffdf8;border:1px solid #e0e4d9;border-radius:24px;padding:32px;box-shadow:0 12px 40px #22482e06}h2{font-size:clamp(23px,3vw,32px);line-height:1.6;margin:14px 0}.choices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}.choice{border:1px solid #d8e0d3;background:white;padding:20px;text-align:left;color:#214737;font-weight:650;line-height:1.5}.choice b{display:inline-block;margin-right:13px;color:#9b8f68}.choice.correct{background:#e7f3df;border:2px solid #4d8e45}.choice.wrong{background:#fff0e9;border:2px solid #ca775a}button:disabled{cursor:default;transform:none}.feedback{background:#ecf2e3;padding:20px;border-radius:15px;margin-top:22px;line-height:1.9}.nextrow{text-align:right;margin-top:20px}.hint{border:1px dashed #c5d1bc;background:transparent;color:#627657;padding:10px 15px;margin-top:18px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.card{background:#fffdf8;border:1px solid #e0e4d9;border-radius:20px;padding:24px}.card h3{margin:10px 0;font-size:20px}.card p{margin:8px 0;color:#597262}.card .cn{font-size:17px;color:#98702d}.score{text-align:center;padding:25px}.score .num{font-size:70px;font-weight:850;color:#315d48}.review{margin:24px 0}.hidden{display:none}footer{text-align:center;color:#8a9586;font-size:12px;padding:24px}@media(max-width:620px){header{padding:16px}.brand{font-size:15px}nav button{padding:8px 10px}.hero{grid-template-columns:1fr}.art{display:none}main{padding:28px 18px}.modes,.choices,.cards{grid-template-columns:1fr}.question{padding:22px}.mode{padding:18px}h1{font-size:36px}}
-.visual{width:180px;aspect-ratio:3/4;background-image:url('hikmat-atlas.png');background-size:400% 300%;background-repeat:no-repeat;border-radius:18px;margin:12px auto;background-color:#fff6e3}.card .visual{width:150px;float:right;margin:0 0 10px 12px}.card:after{content:'';display:block;clear:both}.art{padding:20px;background:#fff6e3;transform:rotate(2deg)}.art .visual{width:210px}.question-visual{float:right;margin:0 0 15px 25px;width:160px}.choices{clear:both}@media(max-width:620px){.art{display:block;border-radius:24px;padding:8px}.art .visual{width:140px}.art p{margin:8px;font-size:20px}.question-visual{float:none;margin:10px auto;width:145px}.card .visual{width:110px} .hero{gap:12px}}.picture-only{width:225px;margin:18px auto}.question:has(.picture-only)>h2{text-align:center;font-size:22px}.question:has(.picture-only)>p{text-align:center}@media(max-width:620px){.picture-only{width:180px}} .pairgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.paircol{display:flex;flex-direction:column;gap:12px}.picpair,.wordpair{height:155px;border:2px solid #dce4d5;background:#fffdf6;border-radius:16px;color:#214737;font-weight:750;padding:12px}.picpair .visual{width:94px;margin:auto;height:125px}.wordpair{font-size:18px;line-height:1.5}.pair-selected{border-color:#d6a14c;box-shadow:0 0 0 3px #f4e8cf}.pair-done{border-color:#6b9a60;background:#e7f3df;opacity:.6}.picpair:hover,.wordpair:hover{transform:none}@media(max-width:620px){.pairgrid{gap:10px}.wordpair{font-size:14px;padding:8px}.picpair,.wordpair{height:145px}} </style><header><div class="brand">✦ RIANG <span>BELAJAR</span></div><nav><button id="playTab" class="active" onclick="home()">闯关</button><button id="learnTab" onclick="learn()">学习卡</button></nav></header><main id="app"></main><footer>KATA-KATA HIKMAT · 每天记一点，作文更精彩</footer><script>
-const data=[
-['Bahasa Jiwa Bangsa','语言是民族的灵魂','Bahasa ialah lambang keperibadian sesuatu masyarakat.','语言体现一个群体的文化与精神。','Kita memartabatkan bahasa kebangsaan kerana bahasa mencerminkan jati diri masyarakat.'],
-['Bahasa Menunjukkan Bangsa','言谈反映文化与修养','Daripada pertuturan seseorang, kita dapat mengenali keperibadiannya.','从一个人的言谈，可以了解他的品格。','Aina sentiasa bertutur dengan sopan kerana tutur kata mencerminkan keperibadian seseorang.'],
-['Bersatu Teguh, Bercerai Roboh','团结则强，分裂则败','Sekiranya kita bersatu padu, kita akan menjadi kuat.','大家团结一致，力量就更强。','Penduduk kampung bersatu untuk menghadapi cabaran kerana perpaduan menjadikan mereka kuat.'],
-['Bersekutu Bertambah Mutu','合作能提高质量，促成成功','Kerjasama dalam sesuatu kegiatan akan menghasilkan kejayaan.','互相合作，有助于把事情做好。','Ahli kumpulan saling bekerjasama untuk menghasilkan projek yang berkualiti.'],
-['Ilmu Pelita Hati','知识是心灵的明灯','Ilmu pengetahuan memberikan panduan dalam kehidupan manusia.','知识指引我们作出正确选择。','Ilmu membantu manusia membuat keputusan yang bijak dan menjadi panduan hidup.'],
-['Kata Dikota','说到做到，信守承诺','Janji yang diberikan hendaklah ditunaikan.','答应别人的事，就要做到。','Adli tetap datang ke rumah rakannya seperti yang dijanjikan walaupun hujan turun.'],
-['Masa Itu Emas','时间宝贵，要珍惜时间','Masa itu sangat bernilai.','时间很珍贵，不应白白浪费。','Cikgu menasihati murid supaya mengisi masa lapang dengan aktiviti yang berfaedah.'],
-['Membaca Itu Jambatan Ilmu','阅读是通往知识的桥梁','Ilmu pengetahuan dapat ditingkatkan melalui pembacaan.','通过阅读，可以增加知识。','Siti membaca buku setiap hari untuk menambahkan ilmu pengetahuannya.'],
-['Muafakat Itu Berkat','共同商量，带来好结果','Kerja yang dilakukan secara muafakat akan mendatangkan hasil yang baik.','大家共同商议，事情会更顺利。','Ketua kelas berbincang dengan rakan-rakan sebelum membuat keputusan tentang aktiviti kelas.'],
-['Memandu Cermat, Jiwa Selamat','谨慎驾驶，保障生命','Berhati-hati semasa memandu supaya semua pihak selamat.','开车小心，保护自己和他人。','Ayah mematuhi had laju dan sentiasa berhati-hati ketika memandu.'],
-['Membazir Itu Amalan Syaitan','浪费是恶习，应当避免','Membazir ialah perbuatan keji yang perlu dijauhi.','不要浪费金钱、食物和物品。','Ibu berpesan kepada Ameera supaya tidak membeli barang yang tidak diperlukan.']
-];
-function visual(n,extra=''){return `<div class="visual ${extra}" role="img" aria-label="${n===11?'快乐读书吉祥物':(mode==='picture'&&!locked?'格言情境插图':data[n][1]+'：联想插图')}" style="background-position:${(n%4)*100/3}% ${Math.floor(n/4)*50}%"></div>`}let mode='picture',round=[],idx=0,score=0,answers=[],locked=false;const app=document.getElementById('app');const shuffle=a=>a.slice().sort(()=>Math.random()-.5);function tabs(which){document.getElementById('playTab').classList.toggle('active',which==='play');document.getElementById('learnTab').classList.toggle('active',which==='learn')}
-function home(){tabs('play');app.innerHTML=`<div class="hero"><div><div class="eyebrow">Bahasa Melayu · Tingkatan 1–3</div><h1>把格言，<br>变成你的得分题。</h1><p class="sub">11句常用格言，边玩边记。<br>先理解意思，再练习在情境中运用。</p><span class="tag">✦ 马来文 × 华文辅助</span></div><div class="art">${visual(11)}<p>Ilmu Pelita Hati</p><span>知识是心灵的明灯</span></div></div><div class="modes"><button class="mode ${mode==='picture'?'selected':''}" onclick="mode='picture';home()"><strong>01　图文配对</strong><small>先点图片，再点对应的马来文格言。<br>答题后再看华文意思。</small></button><button class="mode ${mode==='meaning'?'selected':''}" onclick="mode='meaning';home()"><strong>02　意思配对</strong><small>看华文意思，选出正确的马来文格言。<br>适合刚开始学习的同学。</small></button><button class="mode ${mode==='scene'?'selected':''}" onclick="mode='scene';home()"><strong>03　情境挑战</strong><small>读马来文情境，选择最合适的格言。<br>练习考试常见的运用题。</small></button></div><button class="primary" onclick="start()">开始挑战 · 10题 →</button><p class="foot">不限时 · 每题10分 · 答错后可看解析 · 可重练错题</p>`}
-function learn(){tabs('learn');app.innerHTML='<div class="eyebrow">Learn at your own pace</div><h1>格言学习卡</h1><p class="sub">先记住华文意思，再读马来文解释。</p><div class="cards">'+data.map((d,i)=>`<article class="card">${visual(i)}<span class="tag">${String(i+1).padStart(2,'0')}</span><h3>${d[0]}</h3><p class="cn">${d[1]}</p><p>${d[2]}</p><small>${d[3]}</small></article>`).join('')+'</div>'}
-function start(list){round=list?shuffle(list):shuffle(data).slice(0,10);idx=0;score=0;answers=[];tabs('play');render()}
-function render(){if(mode==='picture'){pictureRender();return}locked=false;let d=round[idx];const choices=shuffle([d,...shuffle(data.filter(x=>x!==d)).slice(0,3)]);app.innerHTML=`<div class="topline"><span class="eyebrow">${mode==='picture'?'图文配对':mode==='meaning'?'意思配对':'情境挑战'} · ${idx+1} / ${round.length}</span><span id="liveScore">✦ ${score} 分</span><button class="secondary" onclick="home()">回首页</button></div><div class="progress"><i style="width:${idx/round.length*100}%"></i></div><section class="question"><span class="tag">${mode==='picture'?'看图，配对正确的文字':mode==='meaning'?'选择对应的格言':'选择适合这个情境的格言'}</span>${visual(data.indexOf(d),mode==='picture'?'picture-only':'question-visual')}<h2>${mode==='picture'?'这张图代表哪一句格言？':mode==='meaning'?d[1]:d[4]}</h2><p class="sub">Pilih kata-kata hikmat yang paling sesuai.</p><div class="choices">${choices.map((c,i)=>`<button class="choice" data-index="${data.indexOf(c)}" onclick="answer(${data.indexOf(c)},this)"><b>${'ABCD'[i]}</b>${c[0]}</button>`).join('')}</div>${mode==='scene'?'<button class="hint" onclick="this.textContent=round[idx][3]">💡 看华文提示</button>':''}<div id="feedback" aria-live="polite"></div></section>`;window.scrollTo(0,0)}
-function answer(n,el){if(locked)return;locked=true;const d=round[idx],ok=data[n]===d;if(ok)score+=10;document.getElementById('liveScore').textContent='✦ '+score+' 分';answers.push({d,ok});document.querySelectorAll('.choice').forEach(b=>{b.disabled=true;if(data[Number(b.dataset.index)]===d)b.classList.add('correct')});if(!ok)el.classList.add('wrong');document.getElementById('feedback').innerHTML=`<div class="feedback"><strong>${ok?'✓ 答对了！':'再记一次，你会更熟悉。'}</strong><br><b>${d[0]}</b><br>${d[1]}<br><span>${d[2]}</span><br><small>${d[3]}</small></div><div class="nextrow"><button class="primary" onclick="next()">${idx+1===round.length?'查看成绩':'下一题'} →</button></div>`}
 
-let paired=new Set(),selectedPic=null,selectedWord=null,missed=new Set();
-function pictureRender(){locked=false;paired=new Set();missed=new Set();selectedPic=null;selectedWord=null;let group=round.slice(idx,idx+5);app.innerHTML=`<div class="topline"><span class="eyebrow">图文配对 · 第 ${Math.floor(idx/5)+1} 组</span><span id="liveScore">✦ ${score} 分</span><button class="secondary" onclick="home()">回首页</button></div><h2>让图片和格言找到彼此</h2><p class="sub">① 点左边图片　② 点右边对应的马来文格言<br>每组最多5对，配对后显示华文解释。</p><div class="pairgrid"><div class="paircol">${group.map(d=>`<button class="picpair" id="pic${data.indexOf(d)}" onclick="pickPicture(${data.indexOf(d)})">${visual(data.indexOf(d))}</button>`).join('')}</div><div class="paircol">${shuffle(group).map(d=>`<button class="wordpair" id="word${data.indexOf(d)}" onclick="pickWord(${data.indexOf(d)})">${d[0]}</button>`).join('')}</div></div><div id="pairFeedback" class="feedback" aria-live="polite">准备好了吗？选一张图开始。</div><div id="pairNext" class="nextrow"></div>`;window.scrollTo(0,0)}
-function pickPicture(n){if(paired.has(n))return;if(selectedPic!==null)document.getElementById('pic'+selectedPic).classList.remove('pair-selected');selectedPic=n;document.getElementById('pic'+n).classList.add('pair-selected');checkPair()}
-function pickWord(n){if(paired.has(n))return;if(selectedWord!==null)document.getElementById('word'+selectedWord).classList.remove('pair-selected');selectedWord=n;document.getElementById('word'+n).classList.add('pair-selected');checkPair()}
-function checkPair(){if(selectedPic===null||selectedWord===null)return;let p=selectedPic,w=selectedWord;selectedPic=null;selectedWord=null;document.getElementById('pic'+p).classList.remove('pair-selected');document.getElementById('word'+w).classList.remove('pair-selected');if(p!==w){missed.add(p);document.getElementById('pairFeedback').textContent='这两个还不匹配，再看看图里的动作或物品，试一次。';return}paired.add(p);let ok=!missed.has(p);if(ok)score+=10;answers.push({d:data[p],ok});for(let prefix of ['pic','word']){let b=document.getElementById(prefix+p);b.disabled=true;b.classList.add('pair-done')}document.getElementById('liveScore').textContent='✦ '+score+' 分';document.getElementById('pairFeedback').innerHTML=`✓ 配对成功！ <b>${data[p][0]}</b><br>${data[p][1]}<br>${data[p][2]}<br><small>本组已配对 ${paired.size} / ${round.slice(idx,idx+5).length}。首次配对正确得10分。</small>`;if(paired.size===round.slice(idx,idx+5).length)document.getElementById('pairNext').innerHTML=`<button class="primary" onclick="idx+=5;if(idx<round.length)pictureRender();else result()">${idx+5<round.length?'下一组':'查看成绩'} →</button>`}
-function next(){if(++idx<round.length)render();else result()}
-function result(){let wrong=answers.filter(x=>!x.ok).map(x=>x.d);app.innerHTML=`<section class="question score"><div class="eyebrow">挑战完成 · Syabas!</div><h1>${wrong.length?'又进步了一点！':'全部答对，太棒了！'}</h1><div class="num">${score}<span style="font-size:22px"> / ${round.length*10}</span></div><p class="sub">答对 ${round.length-wrong.length} / ${round.length} 题</p><button class="primary" onclick="start()">再玩一轮</button> ${wrong.length?'<button class="secondary" id="retry">重练错题</button>':''}<div class="review">${wrong.length?'<p>下面这几句，再记一次：</p>'+wrong.map(d=>`<div class="card" style="text-align:left;margin:10px 0"><b>${d[0]}</b><p>${d[1]}</p></div>`).join(''):'<p>你已经掌握这一轮的格言，试试另一种模式吧。</p>'}</div><button class="secondary" onclick="home()">选择模式</button></section>`;if(wrong.length)document.getElementById('retry').onclick=()=>start(wrong);window.scrollTo(0,0)}home();
-</script></html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kata-kata Hikmat | 中马双语学习游戏</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,"Microsoft YaHei",sans-serif;
+ background:linear-gradient(150deg,#dff6ff,#effff0);
+ color:#17334c;
+}
+header{
+ background:#1379c5;color:white;
+ text-align:center;padding:22px 12px;
+}
+h1{font-size:25px;margin:5px}
+header p{margin:8px}
+main{max-width:760px;margin:auto;padding:15px}
+.panel{
+ background:white;border-radius:20px;
+ padding:20px;margin:15px 0;
+ box-shadow:0 5px 18px #1234;
+}
+.center{text-align:center}
+.hidden{display:none}
+button{
+ cursor:pointer;border:0;border-radius:13px;
+ padding:13px;font-size:16px;
+ font-weight:bold;
+}
+.primary{background:#087dc8;color:white}
+.secondary{background:#e6f3ff;color:#12517c}
+button:disabled{opacity:.5;cursor:default}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.level{background:#e9f3ff;color:#15527c}
+.level.active{background:#087dc8;color:white}
+#progress{height:12px;background:#e5edf4;border-radius:12px;overflow:hidden}
+#bar{height:100%;background:#2dbd78;width:0;transition:.3s}
+#picture{
+ background:linear-gradient(135deg,#d8f5ff,#ecffdd);
+ border-radius:20px;
+ min-height:210px;
+ display:flex;align-items:center;justify-content:center;
+ margin:15px 0;
+ font-size:95px;
+ text-align:center;
+ padding:12px;
+}
+#picture img{max-width:100%;max-height:300px;border-radius:14px}
+.options{display:grid;gap:10px;margin-top:15px}
+.option{
+ text-align:left;background:#f0f7ff;
+ border:2px solid #d4e8f9;
+ color:#153d5a;
+ line-height:1.5;
+}
+.option.correct{background:#d9f8e4;border-color:#22a95a}
+.option.wrong{background:#ffe1e1;border-color:#e94a4a}
+#feedback{font-size:16px;line-height:1.8;margin-top:14px}
+.translation{color:#396b8b;font-size:15px}
+.small{font-size:14px;color:#64748b}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center}
+#next{width:100%;margin-top:15px}
+@media(max-width:430px){
+ .panel{padding:14px}
+ h1{font-size:21px}
+ .levels{gap:4px}
+ .level{font-size:13px;padding:10px 3px}
+ #picture{min-height:175px;font-size:75px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🌟 Kata-kata Hikmat 🌟</h1>
+<p>马来文格言 · 中马双语配对游戏</p>
+<p>11 Peribahasa · 3 Tahap</p>
+</header>
+
+<main>
+<section class="panel center" id="home">
+<h2>🎮 Selamat Datang!</h2>
+<p>欢迎来到格言学习游戏</p>
+<p>通过图片、关键词和意思学习马来文格言。</p>
+<p>每关 11 题，答对一题得 10 分。</p>
+<button class="primary" onclick="startGame()">开始游戏 / Mula Bermain</button>
+</section>
+
+<section id="game" class="hidden">
+<div class="levels">
+<button class="level" id="lv1">1 · Gambar</button>
+<button class="level" id="lv2">2 · Kata Kunci</button>
+<button class="level" id="lv3">3 · Maksud</button>
+</div>
+
+<div class="panel">
+<div class="row">
+<b id="levelTitle"></b>
+<b id="score"></b>
+</div>
+<p id="counter" class="small"></p>
+<div id="progress"><div id="bar"></div></div>
+<h2 id="question" class="center"></h2>
+<div id="picture"></div>
+<div id="options" class="options"></div>
+<div id="feedback" aria-live="polite"></div>
+<button id="next" class="primary hidden" onclick="nextQuestion()">
+下一题 / Seterusnya ➜
+</button>
+</div>
+</section>
+
+<section id="finish" class="panel center hidden">
+<h2 id="finishTitle">🎉 Tahniah!</h2>
+<h1 id="finalScore"></h1>
+<p id="finishText"></p>
+<button class="primary" onclick="continueGame()" id="continueBtn">
+下一关 / Tahap Seterusnya
+</button>
+<button class="secondary" onclick="restartGame()">
+重新开始 / Main Semula
+</button>
+</section>
+</main>
+
+<script>
+const words=[
+{
+name:"Bahasa Jiwa Bangsa",
+cn:"语言是民族的灵魂",
+key:"Bahasa",
+keyCn:"语言",
+meaning:"Bahasa melambangkan identiti sesuatu bangsa.",
+meaningCn:"语言象征一个民族的身份。",
+lesson:"Kita hendaklah memartabatkan bahasa kebangsaan.",
+emoji:"🇲🇾📚👧🏻👦🏽"
+},
+{
+name:"Bahasa Menunjukkan Bangsa",
+cn:"言语体现一个人的修养",
+key:"Pertuturan",
+keyCn:"言语",
+meaning:"Cara seseorang bertutur mencerminkan keperibadiannya.",
+meaningCn:"一个人的说话方式反映其品格。",
+lesson:"Kita hendaklah bertutur dengan sopan.",
+emoji:"👩‍🏫💬🙋"
+},
+{
+name:"Bersatu Teguh Bercerai Roboh",
+cn:"团结则强，分裂则弱",
+key:"Bersatu",
+keyCn:"团结",
+meaning:"Perpaduan menjadikan kita kuat, perpecahan menjadikan kita lemah.",
+meaningCn:"团结使我们强大，分裂使我们弱小。",
+lesson:"Kita hendaklah hidup bersatu padu.",
+emoji:"🤝💪🧑‍🤝‍🧑"
+},
+{
+name:"Bersekutu Bertambah Mutu",
+cn:"团结合作，成果更好",
+key:"Kerjasama",
+keyCn:"合作",
+meaning:"Kerjasama menghasilkan sesuatu yang lebih baik.",
+meaningCn:"合作能够取得更好的成果。",
+lesson:"Kita hendaklah bekerjasama.",
+emoji:"👧🧒🌱🌷"
+},
+{
+name:"Ilmu Pelita Hidup",
+cn:"知识是人生的明灯",
+key:"Ilmu",
+keyCn:"知识",
+meaning:"Ilmu memberi penerangan dan panduan dalam hidup.",
+meaningCn:"知识为人生带来光明和指引。",
+lesson:"Kita perlu rajin menuntut ilmu.",
+emoji:"📚🏮💡"
+},
+{
+name:"Kata Dikotakan",
+cn:"说到做到，遵守承诺",
+key:"Janji",
+keyCn:"承诺",
+meaning:"Janji yang diberikan hendaklah ditunaikan.",
+meaningCn:"许下的承诺必须履行。",
+lesson:"Kita mesti menepati janji.",
+emoji:"🙋✍️✅"
+},
+{
+name:"Masa Itu Emas",
+cn:"时间就是金钱",
+key:"Masa",
+keyCn:"时间",
+meaning:"Masa sangat bernilai dan tidak boleh diulang.",
+meaningCn:"时间非常宝贵，而且无法重来。",
+lesson:"Gunakan masa dengan bijak.",
+emoji:"⏰🪙📖"
+},
+{
+name:"Membaca Itu Jambatan Ilmu",
+cn:"阅读是获取知识的桥梁",
+key:"Membaca",
+keyCn:"阅读",
+meaning:"Membaca menambahkan pengetahuan.",
+meaningCn:"阅读能够增加知识。",
+lesson:"Kita perlu rajin membaca.",
+emoji:"📖🌉🏫"
+},
+{
+name:"Muafakat Itu Berkat",
+cn:"协商合作带来好处",
+key:"Muafakat",
+keyCn:"共识",
+meaning:"Perbincangan dan persetujuan bersama membawa kebaikan.",
+meaningCn:"共同商讨并达成共识能够带来好处。",
+lesson:"Kita hendaklah bermuafakat.",
+emoji:"👨‍👩‍👧‍👦🤝🍎"
+},
+{
+name:"Memandu Cermat, Jiwa Selamat",
+cn:"小心驾驶，保障安全",
+key:"Berhati-hati",
+keyCn:"小心谨慎",
+meaning:"Pemanduan yang berhati-hati dapat mengelakkan kemalangan.",
+meaningCn:"小心驾驶可以避免交通意外。",
+lesson:"Kita mestilah mematuhi peraturan jalan raya.",
+emoji:"🚗🚦🛡️"
+},
+{
+name:"Membazir Itu Amalan Syaitan",
+cn:"浪费是不良行为",
+key:"Pembaziran",
+keyCn:"浪费",
+meaning:"Pembaziran merupakan perbuatan yang tidak baik.",
+meaningCn:"浪费是一种不好的行为。",
+lesson:"Kita hendaklah berjimat cermat.",
+emoji:"🚰🍚♻️"
+}
+];
+
+let level=1;
+let index=0;
+let score=0;
+let totalScore=0;
+let questions=[];
+let answered=false;
+
+const $=id=>document.getElementById(id);
+
+function shuffle(arr){
+let a=[...arr];
+for(let i=a.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+}
+
+function startGame(){
+$("home").classList.add("hidden");
+$("finish").classList.add("hidden");
+$("game").classList.remove("hidden");
+index=0;score=0;
+questions=shuffle(words);
+renderQuestion();
+}
+
+function getAnswer(w){
+if(level===1)return w.name;
+if(level===2)return w.key+"（"+w.keyCn+"）";
+return w.meaning;
+}
+
+function renderQuestion(){
+answered=false;
+const w=questions[index];
+$("feedback").innerHTML="";
+$("next").classList.add("hidden");
+$("score").textContent="⭐ "+score+" / 110";
+$("counter").textContent="Soalan "+(index+1)+" / 11";
+$("bar").style.width=(index/11*100)+"%";
+
+for(let n=1;n<=3;n++){
+$("lv"+n).classList.toggle("active",n===level);
+}
+
+$("levelTitle").textContent=
+level===1?"Level 1 · 图片配格言":
+level===2?"Level 2 · 格言配关键词":
+"Level 3 · 格言配意思";
+
+$("picture").classList.remove("hidden");
+
+if(level===1){
+$("question").textContent="Pilih kata-kata hikmat yang betul.";
+$("picture").textContent=w.emoji;
+}else{
+$("question").textContent=w.name;
+$("picture").classList.add("hidden");
+}
+
+const correct=getAnswer(w);
+const wrong=shuffle(words.filter(x=>x!==w))
+.slice(0,3).map(getAnswer);
+const choices=shuffle([correct,...wrong]);
+$("options").innerHTML="";
+
+choices.forEach(choice=>{
+const b=document.createElement("button");
+b.className="option";
+b.textContent=choice;
+b.onclick=()=>checkAnswer(b,choice,correct,w);
+$("options").appendChild(b);
+});
+}
+
+function checkAnswer(button,choice,correct,w){
+if(answered)return;
+
+if(choice!==correct){
+button.classList.add("wrong");
+button.disabled=true;
+$("feedback").innerHTML=
+"❌ Cuba lagi! 再试一次！";
+return;
+}
+
+answered=true;
+score+=10;
+totalScore+=10;
+button.classList.add("correct");
+
+document.querySelectorAll(".option").forEach(b=>{
+b.disabled=true;
+if(b.textContent===correct)b.classList.add("correct");
+});
+
+$("score").textContent="⭐ "+score+" / 110;
+
+$("feedback").innerHTML=
+"<b>✅ Betul! 答对了！</b>"+
+"<p><b>"+w.name+"</b></p>"+
+"<p>🇨🇳 "+w.cn+"</p>"+
+"<p><b>Kata Kunci:</b> "+w.key+"（"+w.keyCn+"）</p>"+
+"<p><b>Maksud:</b> "+w.meaning+"</p>"+
+"<p class='translation'>华文："+w.meaningCn+"</p>"+
+"<p><b>Pengajaran:</b> "+w.lesson+"</p>";
+
+$("next").classList.remove("hidden");
+}
+
+function nextQuestion(){
+index++;
+if(index>=questions.length){
+showFinish();
+}else{
+renderQuestion();
+}
+}
+
+function showFinish(){
+$("game").classList.add("hidden");
+$("finish").classList.remove("hidden");
+$("finalScore").textContent=score+" / 110";
+$("finishTitle").textContent="🎉 Tahniah! 恭喜完成！";
+$("finishText").textContent=
+"你已经完成 Level "+level+
+"。目前三关累计得分："+totalScore+" / 330";
+$("continueBtn").classList.toggle("hidden",level===3);
+}
+
+function continueGame(){
+if(level<3){
+level++;
+startGame();
+}
+}
+
+function restartGame(){
+level=1;
+totalScore=0;
+startGame();
+}
+</script>
+</body>
+</html>
