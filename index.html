@@ -2,108 +2,135 @@
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Form 2 - Kata-kata Hikmat</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Form 2 Kata-kata Hikmat</title>
 <style>
 *{box-sizing:border-box}
 body{
  margin:0;
  font-family:Arial,"Noto Sans SC",sans-serif;
- color:#19364b;
- background:linear-gradient(140deg,#e1f7ff,#edfff0);
+ background:linear-gradient(135deg,#dff5ff,#effff0);
+ color:#18374d;
  min-height:100vh;
 }
 header{
- background:#087fc3;color:white;
+ background:#0782c6;color:white;
  padding:20px;text-align:center;
- font-size:23px;font-weight:bold;
+ font-size:22px;font-weight:bold;
 }
-main{max-width:750px;margin:auto;padding:20px 14px}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:20px}
-.tabs button{
- border:0;border-radius:17px;padding:16px 4px;
- background:#eaf3ff;color:#21516b;
- font-weight:bold;font-size:clamp(12px,3vw,18px);
-}
-.tabs button.active{background:#0782c7;color:white}
+main{max-width:750px;margin:auto;padding:16px}
 .card{
- background:white;border-radius:28px;
- padding:22px 18px;
- box-shadow:0 10px 25px #173f5326;
+ background:white;border-radius:25px;
+ padding:22px 18px;margin-top:15px;
+ box-shadow:0 8px 25px #16456822;
 }
-.heading{display:flex;justify-content:space-between;gap:8px;font-weight:bold;font-size:19px}
-.score{white-space:nowrap}
-.muted{color:#657888}
-.bar{height:13px;background:#e5edf4;border-radius:20px;overflow:hidden;margin:22px 0}
-.fill{height:100%;background:#30bb7a;width:0;transition:.3s}
-.proverb{text-align:center;font-size:clamp(23px,5vw,33px);margin:27px 0}
+h1,h2{text-align:center}
+h1{font-size:25px}
+input{
+ width:100%;padding:16px;font-size:19px;
+ border:2px solid #b9dff5;border-radius:15px;
+}
+button{
+ cursor:pointer;border:0;border-radius:15px;
+ padding:15px;font-size:16px;font-weight:bold;
+}
+button:disabled{opacity:.45;cursor:default}
+.primary{background:#0782c6;color:white}
+.yellow{background:#ffcf36;color:#20354b}
+.full{width:100%;margin-top:20px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.tabs button{background:#e7f3ff;color:#21516b;padding:14px 4px;font-size:13px}
+.tabs button.active{background:#0782c6;color:white}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.progress{height:12px;background:#e5edf4;border-radius:20px;overflow:hidden;margin:20px 0}
+.fill{height:100%;background:#29bc79;transition:.3s}
 .picture{
- width:100%;aspect-ratio:16/10;object-fit:cover;
- border-radius:22px;background:#e8f6ff;
+ display:block;width:100%;aspect-ratio:16/10;
+ object-fit:cover;border-radius:20px;
+ background:#e7f6ff;
 }
 .placeholder{
- aspect-ratio:16/10;display:grid;place-items:center;
- border-radius:22px;background:linear-gradient(120deg,#d7f5ff,#e8fbe2);
- font-size:65px;
+ aspect-ratio:16/10;border-radius:20px;
+ background:linear-gradient(120deg,#dff4ff,#e8fae5);
+ display:grid;place-items:center;font-size:65px;
 }
-.translation{
- min-height:190px;display:grid;place-items:center;
- text-align:center;background:#def4ff;
- border-radius:24px;padding:22px;
- font-size:clamp(24px,5vw,36px);
- font-weight:bold;margin:25px 0;
-}
+.proverb{text-align:center;font-size:clamp(23px,5vw,32px)}
 .info{
- background:#eef8ff;border:2px solid #b9e3fb;
- border-radius:18px;padding:16px;margin-top:14px;
+ background:#eef8ff;border:2px solid #c4e6fa;
+ border-radius:16px;padding:15px;margin-top:12px;
  line-height:1.8;
 }
-.info strong{color:#0673b3}
-.choices{display:grid;gap:12px;margin-top:24px}
+.info strong{color:#0574b7}
+.translation{
+ background:#def4ff;border-radius:22px;
+ min-height:180px;padding:20px;
+ display:grid;place-items:center;
+ text-align:center;font-size:clamp(23px,5vw,34px);
+ font-weight:bold;margin:25px 0;
+}
+.choices{display:grid;gap:12px;margin-top:22px}
 .choice{
- padding:18px 16px;border:3px solid #d5e7f4;
- background:#f0f7ff;border-radius:20px;
- color:#19364b;font-size:clamp(16px,3.5vw,21px);
- font-weight:bold;text-align:left;cursor:pointer;
+ background:#f0f7ff;border:3px solid #d5e7f4;
+ border-radius:17px;padding:17px;
+ text-align:left;color:#19364b;
+ font-size:17px;font-weight:bold;
 }
 .choice.correct{background:#ddf9e7;border-color:#2bbb72}
 .choice.wrong{background:#ffe5e5;border-color:#f17b7b}
 .controls{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
-.btn{
- border:0;border-radius:17px;padding:15px;
- background:#087ec4;color:white;
- font-size:16px;font-weight:bold;cursor:pointer;
-}
-.btn.next{background:#ffca22;color:#183449}
-button:disabled{opacity:.4;cursor:default}
-.feedback{margin-top:18px;font-weight:bold;line-height:1.6}
+.feedback{margin-top:15px;font-weight:bold;line-height:1.6}
+.hidden{display:none}
+.small{color:#607b8b;font-size:14px}
 </style>
 </head>
 <body>
 
-<header>📚 Form 2 · Kata-kata Hikmat 格言学习</header>
+<header>📚 Form 2 · Kata-kata Hikmat</header>
 
 <main>
-<nav class="tabs">
-<button onclick="changeLevel(1)" id="tab1">1 · Gambar</button>
-<button onclick="changeLevel(2)" id="tab2">2 · Kata Kunci</button>
-<button onclick="changeLevel(3)" id="tab3">3 · Maksud</button>
-</nav>
 
-<section class="card">
-<div class="heading">
-<span id="heading"></span>
-<span class="score" id="score"></span>
+<section class="card" id="login">
+<h1>🌟 Selamat Datang!</h1>
+<h2>欢迎来到格言学习游戏</h2>
+<p>Nama Murid（学生名字）</p>
+<input id="studentName" placeholder="Masukkan nama anda" maxlength="40">
+<button class="primary full" onclick="startGame()">
+Mula Belajar · 开始学习 ▶
+</button>
+</section>
+
+<section id="game" class="hidden">
+<div class="card">
+<div class="row">
+<strong id="welcome"></strong>
+<button onclick="logout()">退出</button>
 </div>
-<p class="muted" id="counter"></p>
-<div class="bar"><div class="fill" id="fill"></div></div>
+</div>
+
+<div class="tabs" style="margin-top:15px">
+<button id="tab1" onclick="changeLevel(1)">1 · Gambar</button>
+<button id="tab2" onclick="changeLevel(2)">2 · Kata Kunci</button>
+<button id="tab3" onclick="changeLevel(3)">3 · Maksud</button>
+</div>
+
+<div class="card">
+<div class="row">
+<strong id="levelTitle"></strong>
+<strong id="score"></strong>
+</div>
+<p class="small" id="counter"></p>
+<div class="progress"><div class="fill" id="fill"></div></div>
+
 <div id="content"></div>
-<div class="feedback" id="feedback"></div>
+<div id="feedback" class="feedback"></div>
+
 <div class="controls">
-<button class="btn" id="prev" onclick="previous()">◀ 上一张</button>
-<button class="btn next" id="next" onclick="advance()">下一张 ▶</button>
+<button class="primary" id="prev" onclick="previous()">◀ 上一张</button>
+<button class="yellow" id="next" onclick="advance()">下一张 ▶</button>
+</div>
 </div>
 </section>
+
 </main>
 
 <script>
@@ -209,39 +236,60 @@ img:"images/membazir-amalan-syaitan.png"
 }
 ];
 
+let student="";
 let level=1;
 let index=0;
 let questions=[];
-let answered=false;
 let points={2:0,3:0};
 let responses={2:{},3:{}};
+let finished=false;
 
 const $=id=>document.getElementById(id);
 
 function shuffle(arr){
  let a=[...arr];
  for(let i=a.length-1;i>0;i--){
-  const j=Math.floor(Math.random()*(i+1));
+  let j=Math.floor(Math.random()*(i+1));
   [a[i],a[j]]=[a[j],a[i]];
  }
  return a;
 }
 
-function resetQuestions(){
- questions=shuffle(lessons.map((_,i)=>i));
- index=0;
- answered=false;
+function startGame(){
+ const name=$("studentName").value.trim();
+ if(!name){
+  alert("请输入学生名字！");
+  return;
+ }
+ student=name;
+ points={2:0,3:0};
+ responses={2:{},3:{}};
+ $("welcome").textContent="👋 "+student;
+ $("login").classList.add("hidden");
+ $("game").classList.remove("hidden");
+ changeLevel(1);
+}
+
+function logout(){
+ $("game").classList.add("hidden");
+ $("login").classList.remove("hidden");
+ $("studentName").value="";
+ student="";
 }
 
 function changeLevel(n){
  level=n;
- resetQuestions();
+ index=0;
+ questions=shuffle(lessons.map((_,i)=>i));
+ finished=false;
  render();
 }
 
 function imageHTML(item){
- return `<div class="placeholder" id="placeholder">${item.emoji}</div>
- <img class="picture" id="lessonImage" style="display:none">`;
+ return `
+ <div class="placeholder" id="placeholder">${item.emoji}</div>
+ <img class="picture" id="lessonImage" alt="Gambar Kata Hikmat" style="display:none">
+ `;
 }
 
 function loadImage(item){
@@ -259,36 +307,40 @@ function loadImage(item){
 }
 
 function getOptions(item){
- const others=shuffle(lessons.filter(x=>x!==item)).slice(0,3);
- return shuffle([item,...others]);
+ const wrong=shuffle(
+  lessons.filter(x=>x.title!==item.title)
+ ).slice(0,3);
+ return shuffle([item,...wrong]).map(x=>x.title);
 }
 
 function render(){
- for(let i=1;i<=3;i++){
-  $("tab"+i).classList.toggle("active",i===level);
+ for(let n=1;n<=3;n++){
+  $("tab"+n).classList.toggle("active",n===level);
  }
 
- const item=level===1?lessons[index]:lessons[questions[index]];
- const saved=level===1?null:responses[level][questions[index]];
- answered=!!saved;
+ const key=level===1?index:questions[index];
+ const item=lessons[key];
+ const saved=level===1?null:responses[level][key];
+ const answered=!!saved;
 
- $("heading").textContent=
-  level===1?"Level 1 · 认识格言":
-  level===2?"Level 2 · 华文配格言":
-  "Level 3 · 格言配意思";
+ $("levelTitle").textContent=
+ level===1?"Level 1 · 认识格言":
+ level===2?"Level 2 · 华文配格言":
+ "Level 3 · 格言配意思";
 
- $("score").textContent=level===1?"📘 学习":
- "⭐ "+points[level]+" / 110";
+ $("score").textContent=level===1?
+ "📘 学习": "⭐ "+points[level]+" / 110";
 
  $("counter").textContent=
  (level===1?"学习卡 ":"Soalan ")+(index+1)+" / 11";
 
- $("fill").style.width=((index+(answered?1:0))/11*100)+"%";
- $("feedback").textContent="";
+ $("fill").style.width=
+ ((index+(level===1?0:answered?1:0))/11*100)+"%";
 
+ $("feedback").textContent="";
  $("prev").disabled=index===0;
  $("next").disabled=level!==1&&!answered;
- $("prev").textContent=level===1?"◀ 上一张":"◀ 上一题";
+ $("next").onclick=advance;
  $("next").textContent=index===10?
  (level===3?"完成 ✓":"进入下一关 ▶"):
  (level===1?"下一张 ▶":"下一题 ▶");
@@ -316,17 +368,17 @@ function render(){
 
  if(level===2){
   $("content").innerHTML=`
-   <div class="translation">${item.zh}</div>
-   <div class="choices" id="choices"></div>`;
+  <div class="translation">${item.zh}</div>
+  <div class="choices" id="choices"></div>`;
  }else{
   $("content").innerHTML=`
-   <h2 class="proverb">${item.title}</h2>
-   ${imageHTML(item)}
-   <div class="choices" id="choices"></div>`;
+  <h2 class="proverb">${item.title}</h2>
+  ${imageHTML(item)}
+  <div class="choices" id="choices"></div>`;
   loadImage(item);
  }
 
- const options=saved?saved.options:getOptions(item).map(x=>x.title);
+ const options=saved?saved.options:getOptions(item);
 
  options.forEach(title=>{
   const option=lessons.find(x=>x.title===title);
@@ -339,25 +391,23 @@ function render(){
    if(title===item.title)btn.classList.add("correct");
    else if(title===saved.selected)btn.classList.add("wrong");
   }else{
-   btn.onclick=()=>answer(item,title,options);
+   btn.onclick=()=>answer(key,title,options);
   }
   $("choices").appendChild(btn);
  });
 
  if(saved){
   $("feedback").textContent=saved.correct?
-   "✅ Betul! 答对了！":
-   "❌ 正确答案："+(level===2?item.title:item.meaning);
+  "✅ Betul! 答对了！":
+  "❌ 正确答案："+(level===2?item.title:item.meaning);
  }
 }
 
-function answer(item,selected,options){
- if(answered)return;
- const correct=selected===item.title;
- const key=questions[index];
+function answer(key,selected,options){
+ if(responses[level][key])return;
+ const correct=selected===lessons[key].title;
  responses[level][key]={selected,options,correct};
  if(correct)points[level]+=10;
- answered=true;
  render();
 }
 
@@ -369,7 +419,7 @@ function previous(){
 }
 
 function advance(){
- if(level!==1&&!answered)return;
+ if(level!==1&&!responses[level][questions[index]])return;
  if(index<10){
   index++;
   render();
@@ -378,27 +428,34 @@ function advance(){
  if(level<3){
   changeLevel(level+1);
  }else{
-  $("content").innerHTML=`
-   <h2 class="proverb">🎉 恭喜完成全部关卡！</h2>
-   <div class="info">Level 2：${points[2]} / 110</div>
-   <div class="info">Level 3：${points[3]} / 110</div>
-   <div class="info">总分：${points[2]+points[3]} / 220</div>`;
-  $("feedback").textContent="Syabas! 继续努力！";
-  $("next").disabled=false;
-  $("next").textContent="重新开始 ↻";
-  $("next").onclick=restart;
+  showResult();
  }
+}
+
+function showResult(){
+ finished=true;
+ $("levelTitle").textContent="🎉 完成学习";
+ $("counter").textContent=student;
+ $("fill").style.width="100%";
+ $("content").innerHTML=`
+ <h2 class="proverb">Syabas! 恭喜完成！</h2>
+ <div class="info">Level 1：11 张学习卡已完成</div>
+ <div class="info">Level 2：${points[2]} / 110</div>
+ <div class="info">Level 3：${points[3]} / 110</div>
+ <div class="info"><strong>总分：${points[2]+points[3]} / 220</strong></div>
+ <p class="small">成绩只在本次游戏中显示，不会上传或保存。</p>`;
+ $("feedback").textContent="Teruskan usaha! 继续努力！";
+ $("prev").disabled=true;
+ $("next").disabled=false;
+ $("next").textContent="重新开始 ↻";
+ $("next").onclick=restart;
 }
 
 function restart(){
  points={2:0,3:0};
  responses={2:{},3:{}};
- $("next").onclick=advance;
  changeLevel(1);
 }
-
-resetQuestions();
-render();
 </script>
 </body>
 </html>
